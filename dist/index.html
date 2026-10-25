@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#f5eee2" />
+  <meta name="description" content="COMMON GROUND 由老年人主导运营的社区空间——可交互 3D 概念模型。" />
+  <title>COMMON GROUND — 互动空间模型</title>
+  <link rel="stylesheet" href="./styles.css" />
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.min.js"}}</script>
+</head>
+<body>
+  <header class="brand" aria-label="项目标题">
+    <div class="brand-mark">CG</div>
+    <div><h1>COMMON<br>GROUND</h1><p>SENIOR-LED COMMUNITY SPACE</p></div>
+  </header>
+
+  <main id="stage" aria-label="COMMON GROUND 互动三维空间模型">
+    <canvas id="scene"></canvas>
+    <div id="labels" aria-hidden="true"></div>
+    <div id="loading"><span></span><p>正在搭建社区空间…</p></div>
+  </main>
+
+  <aside class="panel" aria-label="空间导览">
+    <div class="panel-head">
+      <p class="eyebrow" id="eyebrow">SPACE MODEL · 01</p>
+      <h2 id="headline">一个由经验<br>共同建造的地方</h2>
+      <p class="intro" id="intro">由老年人主导运营，连接咖啡、零售、学习与邻里社交。点击区域名称，靠近探索。</p>
+    </div>
+    <nav id="zones" aria-label="区域列表"></nav>
+    <div class="hint"><span class="mouse-icon">↔</span><p id="hintText"><b>拖动</b>旋转 · <b>滚轮</b>缩放<br><b>右键 / 双指</b>移动视角</p></div>
+  </aside>
+
+  <div class="toolbar" role="group" aria-label="视角工具">
+    <button data-view="overview" class="active" title="整体俯视">⌂<span id="viewOverview">俯视</span></button>
+    <button data-view="human" title="人眼视角">◉<span id="viewHuman">漫游</span></button>
+    <button id="rotate" title="自动旋转">↻<span id="viewRotate">旋转</span></button>
+    <button id="toggleLabels" class="active" title="显示区域标签">Aa<span id="viewLabels">标签</span></button>
+    <button id="toggleWalls" class="active" title="墙体完整 / 剖切显示">▤<span id="viewWalls">剖切</span></button>
+    <button id="toggleLanguage" title="中文 / English">中<span id="viewLanguage">EN</span></button>
+  </div>
+
+  <section id="info" class="info-card" aria-live="polite">
+    <button id="closeInfo" aria-label="关闭">×</button>
+    <p class="info-no">01</p><h3>入口欢迎区</h3><p>开放、清晰、没有收银台阻挡的第一印象。</p>
+  </section>
+
+  <div class="north" aria-label="北向"><span>N</span><i></i></div>
+  <footer id="footerText">DESIGN DEVELOPMENT · OCT 2026 <span>暖木 · 暖白 · COMMON GROUND ORANGE</span></footer>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
